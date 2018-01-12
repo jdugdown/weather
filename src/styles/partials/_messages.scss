@@ -1,19 +1,24 @@
 .message {
   padding: 1rem;
   margin: 1rem 0;
+  background: $grey3;
+  color: $white;
 
-  &.message-error {
+  &.message-error,
+  &.message-warning {
     background: $error;
-    color: $white;
+  }
+
+  &.message-watch {
+    background: $warning;
   }
 
   &.message-success {
     background: $success;
-    color: $white;
   }
 
-  &.message-info {
+  &.message-info,
+  &.message-advisory {
     background: $info;
-    color: $white;
   }
 }
