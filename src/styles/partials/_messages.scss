@@ -1,8 +1,9 @@
 .message {
-  padding: 1rem;
+  padding: .75rem 1rem;
   margin: 1rem 0;
   background: $grey3;
   color: $white;
+  font-size: .875rem;
 
   &.message-error,
   &.message-warning {
