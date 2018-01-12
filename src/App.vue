@@ -1,28 +1,66 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <div id="loading" v-if="loading"></div>
+
+    <div class="container" v-else>
+      <div v-if="errors && errors.length">
+        <div class="message message-error" v-for="error in errors"><strong>Error:</strong> {{ error.message }}</div>
+      </div>
+
+      <div v-else>
+        <div class="message message-info" v-for="alert in forecast.alerts">
+          <strong>{{ alert.title }}</strong>
+        </div>
+
+        <Currently :forecast="forecast.currently"></Currently>
+
+        <pre><code>{{ forecast }}</code></pre>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import axios from 'axios'
+import Currently from './components/Currently'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Currently
+  },
+  data () {
+    return {
+      loading: true,
+      errors: [],
+      forecast: []
+    }
+  },
+  created () {
+    console.log('created')
+  },
+  mounted () {
+    console.log('mounted')
+    this.getForecast()
+  },
+  methods: {
+    getForecast () {
+      axios.get('../static/testdata.json')
+        .then(response => {
+          this.forecast = response.data
+          this.loading = false
+        })
+        .catch(error => {
+          this.errors.push(error)
+          this.loading = false
+        })
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Extended+Text|Roboto+Condensed:300,400,700|Roboto:300,400,500,700,900');
 </style>
+<style src="../node_modules/sanitize.css/sanitize.css" lang="css"></style>
+<style src="./styles/main.scss" lang="scss"></style>
