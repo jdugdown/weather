@@ -11,3 +11,21 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+Vue.filter('temperature', function (value) {
+  if (!value) return ''
+  value = Math.round(value)
+  return value + '\xB0'
+})
+
+Vue.filter('percent', function (value) {
+  if (!value) return ''
+  value = value * 100
+  return value + '%'
+})
+
+Vue.filter('round', function (value) {
+  if (!value) return ''
+  value = Math.round(value)
+  return value
+})
