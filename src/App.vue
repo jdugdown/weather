@@ -13,8 +13,6 @@
         </div>
 
         <Currently :forecast="forecast.currently"></Currently>
-
-        <pre><code>{{ forecast }}</code></pre>
       </div>
     </div>
   </div>
