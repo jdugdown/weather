@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import moment from 'moment'
 
 Vue.config.productionTip = false
 
@@ -27,5 +28,12 @@ Vue.filter('percent', function (value) {
 Vue.filter('round', function (value) {
   if (!value) return ''
   value = Math.round(value)
+  return value
+})
+
+Vue.filter('formatDate', function (value) {
+  if (!value) return ''
+  value = new Date(value*1000);
+  value = moment(value).format('ddd DD')
   return value
 })
