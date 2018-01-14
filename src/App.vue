@@ -8,6 +8,8 @@
       </div>
 
       <div v-else>
+        <h1>Somecity, State</h1>
+
         <div class="message" :class="'message-' + alert.severity" v-for="alert in forecast.alerts">
           <strong>{{ alert.title }}</strong>
         </div>
