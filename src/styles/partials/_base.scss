@@ -20,6 +20,8 @@ body {
   position: relative;
   font-family: $font-regular;
   font-size: 1rem;
+  background: darken($info, 30%);
+  color: $grey1;
 }
 
 .container {
