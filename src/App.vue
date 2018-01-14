@@ -11,7 +11,8 @@
         <h1>Somecity, State</h1>
 
         <div class="message" :class="'message-' + alert.severity" v-for="alert in forecast.alerts">
-          <strong>{{ alert.title }}</strong>
+          <div><strong>{{ alert.title }}</strong></div>
+          <div>{{ alert.description }}</div>
         </div>
 
         <Currently :forecast="forecast.currently"></Currently>
