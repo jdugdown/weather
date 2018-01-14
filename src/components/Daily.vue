@@ -5,6 +5,7 @@
       <div class="day" v-for="day in forecast.data">
         <span class="day__date">{{ day.time | formatDate }}</span>
         <span class="day__icon" :class="'day__icon--' + day.icon">{{ day.icon }}</span>
+        <span class="day__temps">{{ day.temperatureHigh | round }} <small>{{ day.temperatureLow | round }}</small></span>
       </div>
     </div>
   </div>
