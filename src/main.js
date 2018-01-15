@@ -37,3 +37,10 @@ Vue.filter('formatDate', function (value) {
   value = moment(value).format('ddd DD')
   return value
 })
+
+Vue.filter('formatTime', function (value) {
+  if (!value) return ''
+  value = new Date(value*1000);
+  value = moment(value).format('h:mm a')
+  return value
+})
