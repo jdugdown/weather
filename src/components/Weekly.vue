@@ -1,7 +1,7 @@
 <template>
-  <div class="daily">
+  <div class="weekly">
     <h2>Weekly Forecast</h2>
-    <div class="daily-forecast">
+    <div class="weekly-forecast">
       <div class="day" v-for="day in forecast.data">
         <span class="day__date">{{ day.time | formatDate }}</span>
         <span class="day__icon" :class="'day__icon--' + day.icon">{{ day.icon }}</span>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'Daily',
+  name: 'Weekly',
   props: [
     'forecast',
   ]
