@@ -1,6 +1,5 @@
 <template>
   <div class="currently">
-    <p><strong>time:</strong> {{ forecast.time | formatDate }}</p>
     <p><strong>summary:</strong> {{ forecast.summary }}</p>
     <p><strong>icon:</strong> {{ forecast.icon }}</p>
     <p><strong>temperature:</strong> {{ forecast.temperature | temperature }}</p>
