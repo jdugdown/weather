@@ -1,6 +1,7 @@
 <template>
   <div class="weekly">
     <h2>Weekly Forecast</h2>
+    <p>{{ forecast.summary }}</p>
     <div class="weekly-forecast">
       <div class="day" v-for="day in forecast.data">
         <span class="day__date">{{ day.time | formatDate }}</span>
