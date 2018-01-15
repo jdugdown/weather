@@ -16,6 +16,7 @@
         </div>
 
         <Currently :forecast="forecast.currently"></Currently>
+        <Today :forecast="forecast.daily.data[0]"></Today>
         <Hourly :forecast="forecast.hourly"></Hourly>
         <Weekly :forecast="forecast.daily"></Weekly>
       </div>
@@ -26,6 +27,7 @@
 <script>
 import axios from 'axios'
 import Currently from './components/Currently'
+import Today from './components/Today'
 import Hourly from './components/Hourly'
 import Weekly from './components/Weekly'
 
@@ -33,6 +35,7 @@ export default {
   name: 'app',
   components: {
     Currently,
+    Today,
     Hourly,
     Weekly
   },
