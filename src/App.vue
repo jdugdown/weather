@@ -30,6 +30,7 @@ import Currently from './components/Currently'
 import Today from './components/Today'
 import Hourly from './components/Hourly'
 import Weekly from './components/Weekly'
+import LineChart from './components/LineChart'
 
 export default {
   name: 'app',
@@ -37,7 +38,8 @@ export default {
     Currently,
     Today,
     Hourly,
-    Weekly
+    Weekly,
+    LineChart
   },
   data () {
     return {
