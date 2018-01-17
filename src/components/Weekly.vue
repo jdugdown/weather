@@ -5,7 +5,11 @@
     <div class="weekly-forecast">
       <div class="day" v-for="day in forecast.data">
         <span class="day__date">{{ day.time | formatDate }}</span>
-        <span class="day__icon" :class="'day__icon--' + day.icon"><img :src="'./static/img/icon-' + day.icon + '.svg'" :alt="day.icon" width="60" height="60"></span>
+        <span class="day__icon" :class="'day__icon--' + day.icon">
+          <img :src="'./static/img/icon-partly-cloudy-day.svg'" alt="partly cloudy" width="60" height="60" v-if="day.icon == 'partly-cloudy-night'">
+          <img :src="'./static/img/icon-clear-day.svg'" alt="clear" width="60" height="60" v-else-if="day.icon == 'clear-night'">
+          <img :src="'./static/img/icon-' + day.icon + '.svg'" :alt="day.icon" width="60" height="60" v-else>
+        </span>
         <span class="day__temps">{{ day.temperatureHigh | round }} <small>{{ day.temperatureLow | round }}</small></span>
       </div>
     </div>
