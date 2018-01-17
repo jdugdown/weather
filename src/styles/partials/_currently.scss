@@ -1,12 +1,45 @@
+.currently {
+  margin: 3rem 0;
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: -1rem;
+}
+
+.overview {
+  text-align: center;
+  flex: 1 0 300px;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.overview__temperature {
+  font: 300 6rem/1 $font-regular;
+}
+
+.overview__icon {
+  margin-left: 1rem;
+}
+
+.overview__summary {
+  text-align: center;
+}
+
 .currently__details {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  align-content: center;
   font-weight: 300;
   font-size: 1.125rem;
+  opacity: .8;
+  margin-left: 2rem;
 
   span {
-    margin: 1rem;
+    margin: .5rem 1rem;
 
     svg {
       display: inline-block;

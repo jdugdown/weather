@@ -1,17 +1,22 @@
 <template>
   <div class="currently">
-    <p><strong>summary:</strong> {{ forecast.summary }}</p>
-    <p><strong>icon:</strong> {{ forecast.icon }}</p>
-    <p><strong>temperature:</strong> {{ forecast.temperature | temperature }}</p>
-    <p><strong>apparentTemperature:</strong> {{ forecast.apparentTemperature | temperature }}</p>
-    <p><strong>dewPoint:</strong> {{ forecast.dewPoint | temperature }}</p>
-    <p><strong>humidity:</strong> {{ forecast.humidity | percent }}</p>
-    <p><strong>pressure:</strong> {{ forecast.pressure | round }}</p>
-    <p><strong>windSpeed:</strong> {{ forecast.windSpeed | round }}</p>
-    <p><strong>windBearing:</strong> {{ forecast.windBearing }}</p>
-    <p><strong>cloudCover:</strong> {{ forecast.cloudCover | percent }}</p>
-    <p><strong>uvIndex:</strong> {{ forecast.uvIndex }}</p>
-    <p><strong>visibility:</strong> {{ forecast.visibility }}</p>
+    <div class="overview">
+      <div class="overview__top">
+        <span class="overview__temperature">{{ forecast.temperature | temperature }}</span>
+        <span class="overview__icon"><img :src="'./static/img/icon-' + forecast.icon + '.svg'" :alt="forecast.icon" width="96" height="96"></span>
+      </div>
+      <h4 class="overview__summary">{{ forecast.summary }}</h4>
+    </div>
+
+    <div class="currently__details">
+      <span>Feels Like: {{ forecast.apparentTemperature | temperature }}</span>
+      <span>Humidity: {{ forecast.humidity | percent }}</span>
+      <span>Pressure: {{ forecast.pressure | round }}mb</span>
+      <span>Wind: {{ forecast.windSpeed | round }}mph <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" :style="'transform: rotate(' + forecast.windBearing + 'deg);'"><path d="M20.485 372.485l99.029 99.03c4.686 4.686 12.284 4.686 16.971 0l99.029-99.03c7.56-7.56 2.206-20.485-8.485-20.485H156V44c0-6.627-5.373-12-12-12h-32c-6.627 0-12 5.373-12 12v308H28.97c-10.69 0-16.044 12.926-8.485 20.485z"/></svg></span>
+      <span>Cloud Cover: {{ forecast.cloudCover | percent }}</span>
+      <span>UV Index: {{ forecast.uvIndex }}</span>
+      <span>Visibility: {{ forecast.visibility }}</span>
+    </div>
   </div>
 </template>
 
