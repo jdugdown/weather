@@ -1,0 +1,18 @@
+.currently__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-weight: 300;
+  font-size: 1.125rem;
+
+  span {
+    margin: 1rem;
+
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
