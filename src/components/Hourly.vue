@@ -2,7 +2,7 @@
   <div class="hourly">
     <h2>Hourly Forecast</h2>
     <p>{{ forecast.summary }}</p>
-    <LineChart :hours="hours" :temps="hourlyTemps"></LineChart>
+    <LineChart :hours="hours" :temps="hourlyTemps" :feels="feelsTemps" :humidity="humidity" :precip="precipitation"></LineChart>
   </div>
 </template>
 
@@ -34,6 +34,27 @@ export default {
         tempsOnly.push(Math.round(hour.temperature))
       })
       return tempsOnly
+    },
+    feelsTemps: function() {
+      var feelsTempsOnly = []
+      this.forecast.data.forEach(function(hour) {
+        feelsTempsOnly.push(Math.round(hour.apparentTemperature))
+      })
+      return feelsTempsOnly
+    },
+    humidity: function() {
+      var humidityOnly = []
+      this.forecast.data.forEach(function(hour) {
+        humidityOnly.push(Math.round(hour.humidity * 100))
+      })
+      return humidityOnly
+    },
+    precipitation: function() {
+      var precipitationOnly = []
+      this.forecast.data.forEach(function(hour) {
+        precipitationOnly.push(Math.round(hour.precipProbability * 100))
+      })
+      return precipitationOnly
     }
   }
 }
