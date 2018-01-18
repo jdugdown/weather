@@ -33,14 +33,14 @@ Vue.filter('round', function (value) {
 
 Vue.filter('formatDate', function (value) {
   if (!value) return ''
-  value = new Date(value*1000);
+  value = new Date(value*1000)
   value = moment(value).format('ddd DD')
   return value
 })
 
 Vue.filter('formatTime', function (value) {
   if (!value) return ''
-  value = new Date(value*1000);
+  value = new Date(value*1000)
   value = moment(value).format('h:mm a')
   return value
 })
