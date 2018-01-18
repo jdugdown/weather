@@ -1,3 +1,54 @@
 .today {
   margin: 3rem 0;
 }
+
+.today__details {
+  display: flex;
+  justify-content: space-between;
+
+  span,
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  span {
+    font: 300 1.25rem/1 $font-condensed;
+  }
+
+  img {
+    margin-right: .5rem;
+  }
+}
+
+.today__summary {
+  flex: 0 0 400px;
+}
+
+.today__sun {
+  h6 {
+    margin-bottom: 0;
+  }
+}
+
+.today__chanceofprecip {
+  text-align: center;
+}
+
+.donut {
+  fill: none;
+}
+
+.donut__background {
+  stroke: $grey1;
+}
+
+.donut__fill {
+  transform: rotate(-90deg);
+  transform-origin: center;
+  stroke: lighten($info, 10%);
+}
+
+.donut__value {
+  font: 300 1.25rem/1 $font-condensed;
+}
