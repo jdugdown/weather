@@ -44,6 +44,12 @@
   }
 }
 
+.today__detail--donuts {
+  flex: 0 1 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .donut {
   fill: none;
 }
