@@ -13,7 +13,7 @@
   }
 
   span {
-    font: 300 1.25rem/1 $font-condensed;
+    font: 300 1.25rem/2.25rem $font-condensed;
   }
 
   img {
@@ -25,14 +25,23 @@
   flex: 0 0 400px;
 }
 
-.today__sun {
-  h6 {
-    margin-bottom: 0;
-  }
+.today__detail--moonphase,
+.today__detail--humidity,
+.today__detail--chanceofprecip,
+.today__detail--cloudcover {
+  text-align: center;
 }
 
-.today__chanceofprecip {
-  text-align: center;
+.today__detail--moonphase {
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  small {
+    display: block;
+    line-height: 1;
+  }
 }
 
 .donut {
@@ -40,7 +49,8 @@
 }
 
 .donut__background {
-  stroke: $grey1;
+  stroke: $white;
+  opacity: .25;
 }
 
 .donut__fill {
