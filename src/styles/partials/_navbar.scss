@@ -1,0 +1,29 @@
+.navbar {
+  background: rgba($black, .4);
+  text-align: right;
+
+  form {
+    font-size: 0;
+
+    input,
+    button {
+      border: 0;
+      background: rgba($white, .5);
+      display: inline-block;
+      height: 2.75rem;
+      vertical-align: bottom;
+      font-size: 1rem;
+    }
+
+    input {
+      padding: .75rem 1rem;
+      font-family: $font-condensed;
+      line-height: 1;
+      width: 15rem;
+    }
+  }
+}
+
+::placeholder {
+  color: $grey1;
+}
