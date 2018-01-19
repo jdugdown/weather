@@ -34,7 +34,7 @@ export default {
           },
           {
             label: 'Feels Like',
-            borderColor: 'rgba(255, 255, 255, .5)',
+            borderColor: 'rgba(255, 255, 255, .75)',
             borderWidth: 1,
             lineTension: 0.5,
             pointRadius: 0,
@@ -49,7 +49,7 @@ export default {
           },
           {
             label: 'Humidity',
-            borderColor: '#409ad5',
+            borderColor: '#41acf1',
             borderWidth: 1,
             lineTension: 0.5,
             pointRadius: 0,
@@ -63,7 +63,7 @@ export default {
           },
           {
             label: 'Chance of Precipitation',
-            borderColor: '#409ad5',
+            borderColor: '#41acf1',
             borderWidth: 1,
             lineTension: 0.5,
             pointRadius: 0,
@@ -71,7 +71,7 @@ export default {
             pointHitRadius: 25,
             backgroundColor: 'rgba(255, 255, 255, 0)',
             fill: false,
-            borderDash: [2, 2],
+            borderDash: [5, 5],
             data: this.precip.slice(0, 24),
             yAxisID: 'B',
             steppedLine: true

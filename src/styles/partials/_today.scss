@@ -77,7 +77,7 @@
 .donut__fill {
   transform: rotate(-90deg);
   transform-origin: center;
-  stroke: lighten($info, 10%);
+  stroke: lighten(saturate($info, 23), 16);
 }
 
 .donut__value {
