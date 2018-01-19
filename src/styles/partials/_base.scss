@@ -79,6 +79,10 @@ body {
 
   &.day-clear {
     background-image: url('/static/img/bg-day-clear.jpg');
+
+    &::before {
+      background: rgba($black, .45);
+    }
   }
 
   &.night-clouds {
