@@ -1,4 +1,8 @@
 .hourly {
+  > div {
+    height: 300px;
+  }
+
   #line-chart {
     background: rgba($white, .1);
   }

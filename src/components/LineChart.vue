@@ -131,7 +131,7 @@ export default {
             position: 'left',
             ticks: {
               fontSize: 12,
-              padding: 16
+              stepSize: 2
             },
             gridLines: false
           }, {
@@ -140,9 +140,9 @@ export default {
             position: 'right',
             ticks: {
               fontSize: 12,
-              padding: 16,
               min: 0,
-              max: 100
+              max: 100,
+              stepSize: 20
             },
             gridLines: false
           }]
