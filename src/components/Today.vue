@@ -7,10 +7,11 @@
         <p>{{ forecast.summary }}</p>
       </div>
       <div class="today__detail today__detail--temps">
-        <h6>High:</h6>
-        <span>{{ forecast.temperatureHigh | temperature }}</span>
-        <h6>Low:</h6>
-        <span>{{ forecast.temperatureLow | temperature }}</span>
+        <h6>Temperature:</h6>
+        <span class="high">{{ forecast.temperatureHigh | temperature }}</span>
+        <span class="low">{{ forecast.temperatureLow | temperature }}</span>
+        <h6>Wind:</h6>
+        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" :style="'transform: rotate(' + forecast.windBearing + 'deg);'" width="24" height="24"><path d="M20.485 372.485l99.029 99.03c4.686 4.686 12.284 4.686 16.971 0l99.029-99.03c7.56-7.56 2.206-20.485-8.485-20.485H156V44c0-6.627-5.373-12-12-12h-32c-6.627 0-12 5.373-12 12v308H28.97c-10.69 0-16.044 12.926-8.485 20.485z"/></svg> {{ forecast.windSpeed | round }}mph</span>
       </div>
       <div class="today__detail today__detail--sun">
         <h6>Sunrise:</h6>
@@ -25,7 +26,7 @@
         <img :src="'/static/img/icon-moon-' + moonphaseIcon + '.svg'" :alt="moonphase" width="60" height="60">
         <span>
           {{ moonphase }}
-          <small>{{ forecast.moonPhase | percent }} Illuminated</small>
+          <small>{{ moonphaseIllumination | percent }} Illuminated</small>
         </span>
       </div>
       <div class="today__detail today__detail--donuts">
@@ -95,6 +96,18 @@ export default {
     moonphaseIcon: function() {
       var moonphaseIcon = this.moonphase
       return moonphaseIcon.replace(/\s+/g, '-').toLowerCase()
+    },
+    moonphaseIllumination: function() {
+      var illumination = this.forecast.moonPhase
+
+      if (illumination <= 0.50) {
+        illumination = illumination * 2
+      } else {
+        illumination = 1 - illumination
+        illumination = illumination * 2
+      }
+
+      return illumination
     }
   }
 }

@@ -25,6 +25,21 @@
   flex: 0 0 400px;
 }
 
+.today__detail--temps {
+  .high {
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+
+  .low {
+    opacity: .75;
+    font-size: 1.75rem;
+    vertical-align: bottom;
+    line-height: 1;
+    margin-left: .125rem;
+  }
+}
+
 .today__detail--moonphase,
 .today__detail--humidity,
 .today__detail--chanceofprecip,
