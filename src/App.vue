@@ -9,14 +9,15 @@
         </div>
       </div>
 
-      <div class="bg" :class="background" v-else>
+      <div v-else>
+        <div class="bg" :class="background"></div>
         <div class="container">
           <div class="message" :class="'message--' + alert.severity" v-for="alert in forecast.alerts">
             <div class="message__title"><strong>{{ alert.title }}</strong></div>
             <div class="message__description">{{ alert.description }}</div>
           </div>
 
-          <h1>Somecity, State</h1>
+          <h1>{{ userLocation.city }}, {{  userLocation.region }}</h1>
 
           <Currently :forecast="forecast.currently"></Currently>
           <Today :forecast="forecast.daily.data[0]"></Today>
@@ -54,15 +55,24 @@ export default {
     return {
       loading: true,
       errors: [],
+      userLocation: [],
       forecast: []
     }
   },
   mounted () {
-    this.getForecast()
+    axios.get('https://ipinfo.io/json')
+      .then(response => {
+        this.userLocation = response.data
+        this.getForecast(response.data.loc)
+      })
+      .catch(error => {
+        this.errors.push(error)
+        this.loading = false
+      })
   },
   methods: {
-    getForecast () {
-      axios.get('../static/testdata.json')
+    getForecast (location) {
+      axios.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/60ef38c117b7dbb115097bf8b54e3ee8/' + location)
         .then(response => {
           this.forecast = response.data
           this.loading = false
