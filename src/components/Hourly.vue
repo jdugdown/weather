@@ -1,7 +1,5 @@
 <template>
   <div class="hourly">
-    <h2>Hourly Forecast</h2>
-    <p>{{ forecast.summary }}</p>
     <LineChart :hours="hours" :temps="hourlyTemps" :feels="feelsTemps" :humidity="humidity" :precip="precipitation"></LineChart>
   </div>
 </template>
