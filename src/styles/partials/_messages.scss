@@ -5,21 +5,25 @@
   color: $white;
   font-size: .875rem;
 
-  &.message-error,
-  &.message-warning {
+  &.message--error,
+  &.message--warning {
     background: $error;
   }
 
-  &.message-watch {
+  &.message--watch {
     background: $warning;
   }
 
-  &.message-success {
+  &.message--success {
     background: $success;
   }
 
-  &.message-info,
-  &.message-advisory {
+  &.message--info,
+  &.message--advisory {
     background: $info;
+  }
+
+  .message__description {
+    margin-top: .5rem;
   }
 }
