@@ -22,6 +22,7 @@ Vue.filter('temperature', function (value) {
 Vue.filter('percent', function (value) {
   if (!value) return ''
   value = value * 100
+  value = Math.round(value)
   return value + '%'
 })
 
