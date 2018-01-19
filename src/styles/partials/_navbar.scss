@@ -1,5 +1,5 @@
 .navbar {
-  background: rgba($black, .4);
+  background: rgba($black, .25);
   text-align: right;
 
   form {
@@ -8,7 +8,7 @@
     input,
     button {
       border: 0;
-      background: rgba($white, .5);
+      background: rgba($white, .3);
       display: inline-block;
       height: 2.75rem;
       vertical-align: bottom;
