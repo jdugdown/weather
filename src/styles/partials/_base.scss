@@ -24,6 +24,10 @@ body {
   color: $grey1;
 }
 
+#app {
+  overflow-x: hidden;
+}
+
 .container {
   width: 1400px;
   max-width: 100%;
@@ -100,5 +104,11 @@ body {
   > .container {
     position: relative;
     z-index: 2;
+  }
+}
+
+.app-top {
+  @include media-query(min-xl) {
+    display: flex;
   }
 }

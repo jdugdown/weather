@@ -30,8 +30,11 @@
           <h1 v-if="formattedAddress">{{ formattedAddress }}</h1>
           <h1 v-else>{{ userLocation.city }}, {{  userLocation.region }}</h1>
 
-          <Currently :forecast="forecast.currently"></Currently>
-          <Today :forecast="forecast.daily.data[0]"></Today>
+          <div class="app-top">
+            <Currently :forecast="forecast.currently"></Currently>
+            <Today :forecast="forecast.daily.data[0]"></Today>
+          </div>
+
           <Hourly :forecast="forecast.hourly"></Hourly>
           <Weekly :forecast="forecast.daily"></Weekly>
 

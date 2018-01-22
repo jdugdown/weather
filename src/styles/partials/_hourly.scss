@@ -1,6 +1,22 @@
 .hourly {
   > div {
-    height: 300px;
+    display: none;
+
+    @include media-query(min-sm) {
+      display: block;
+    }
+
+    @include media-query(min-md) {
+      height: 300px;
+    }
+
+    @include media-query(min-xl) {
+      height: 275px;
+    }
+
+    @include media-query('min-width: 2100px') {
+      height: 400px;
+    }
   }
 
   #line-chart {

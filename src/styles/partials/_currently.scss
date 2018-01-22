@@ -1,14 +1,35 @@
 .currently {
   margin: 2rem 0;
-  display: flex;
-  width: 100%;
-  max-width: 1000px;
-  margin-left: -1rem;
+
+  @include media-query(min-md) {
+    display: flex;
+  }
+
+  @include media-query(min-lg) {
+    margin-left: -1rem;
+  }
+
+  @include media-query(min-xl) {
+    flex-direction: column;
+    margin: 1rem 2rem 1rem -1rem;
+    flex: 0 0 350px;
+  }
+
+  @include media-query('min-width: 1400px') {
+    margin-right: 3rem;
+  }
 }
 
 .overview {
   text-align: center;
-  flex: 1 0 300px;
+
+  @include media-query(min-md) {
+    flex: 1 0 300px;
+  }
+
+  @include media-query(min-xl) {
+    flex: none;
+  }
 
   span {
     display: inline-block;
@@ -29,17 +50,41 @@
 }
 
 .currently__details {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
   font-weight: 300;
-  font-size: 1.125rem;
   opacity: .8;
-  margin-left: 2rem;
+  column-count: 2;
+  column-gap: 1rem;
+
+  @include media-query('min-width: 375px') {
+    font-size: 1.125rem;
+  }
+
+  @include media-query(min-md) {
+    column-count: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+  }
+
+  @include media-query(min-xl) {
+    justify-content: center;
+  }
 
   span {
-    margin: .5rem 1rem;
+    display: block;
+    padding: .5rem 0;
+
+    @include media-query(min-md) {
+      display: inline-block;
+      padding: 0;
+      margin: .5rem 1.5rem;
+    }
+
+    @include media-query(min-lg) {
+      margin: .5rem 1rem;
+    }
 
     svg {
       display: inline-block;
