@@ -8,31 +8,40 @@
 
   form {
     font-size: 0;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 1rem;
+    width: calc(100% - 75px);
 
-    input,
-    button {
-      border: 0;
-      background: rgba($white, .3);
-      display: inline-block;
-      height: 2.75rem;
-      vertical-align: bottom;
-      font-size: 1rem;
+    @include media-query(min-sm) {
+      width: auto;
     }
+  }
 
-    input {
-      padding: .75rem 1rem;
-      font-family: $font-condensed;
-      line-height: 1;
-      width: calc(100% - 44px);
+  input,
+  button {
+    border: 0;
+    background: rgba($white, .3);
+    display: inline-block;
+    height: 2.75rem;
+    vertical-align: bottom;
+    font-size: 1rem;
+  }
 
-      @include media-query(min-sm) {
-        width: 15rem;
-      }
+  input {
+    padding: .75rem 1rem;
+    font-family: $font-condensed;
+    line-height: 1;
+    width: calc(100% - 44px);
+
+    @include media-query(min-sm) {
+      width: 15rem;
     }
+  }
 
-    button {
-      width: 44px;
-    }
+  button {
+    width: 44px;
+    cursor: pointer;
   }
 }
 
