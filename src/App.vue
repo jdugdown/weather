@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="loading" v-if="loading"></div>
+    <div id="loading" v-if="loading"><div></div></div>
 
     <div v-else>
       <div v-if="errors && errors.length">
