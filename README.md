@@ -2,6 +2,13 @@
 
 > A Vue.js weather forecast project.
 
+## To Do
+- [ ] IE compatibility
+- [ ] Fix input and button styling on iOS
+- [ ] Provide options after triggering an error
+- [ ] Add toggle for units (F/C, mi/km)
+- [ ] Account for time offset between user and location being viewed
+
 ## Build Setup
 
 ``` bash
